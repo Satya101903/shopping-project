@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Men's Fashion</title>
+    <style>
+        *{
+          margin: 0;
+         padding: 0;
+         }
+        .k1 h1 {
+            text-align: center;
+            color: purple;
+            font-size: 3em;
+        }
+        
+        .men1 {
+            width: 360px;
+            height: 500px;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .men1:hover {
+            transform: scale(1.05);
+        }
+        
+        .men1 img {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .b3 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none;
+        }
+
+        /* Filter Button Styling */
+        .filter-button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: darkviolet;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .men1 {
+                width: 90%; /* Make cards full width on smaller screens */
+            }
+        }
+        header{
+            background-color: black;
+            height: 150px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+    <div class="k1">
+        <h1 style="padding-top: 20px;">MEN'S FASHION</h1>
+    </div>
+    <br>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button class="filter-button" onclick="filterItems('all')">All</button>
+        <button class="filter-button" onclick="filterItems('Shirts')">Shirts</button>
+        <button class="filter-button" onclick="filterItems('Trousers')">Trousers</button>
+        <button class="filter-button" onclick="filterItems('Shoes')">Shoes</button>
+    </div>
+</header>
+    <div class="b3">
+        <div class="men1" data-category="Shirts">
+            <a href="men0.html"><img src="https://img.freepik.com/free-photo/businessman-formal-clothes-sunglasses_158538-8323.jpg?semt=ais_hybrid" alt="Variety of shirts"></a>
+            <h1>SHIRTS</h1>
+        </div>
+
+        <div class="men1" data-category="Trousers">
+            <a href="men1.html"><img src="https://img.freepik.com/free-photo/businessman-wearing-black-pants-with-white-shirt_53876-102237.jpg?semt=ais_hybrid" alt="Variety of trousers"></a>
+            <h1>TROUSERS</h1>
+        </div>
+
+        <div class="men1" data-category="Shoes">
+            <a href="men2.html"><img src="https://img.freepik.com/free-photo/pair-brown-leather-boots_1150-6005.jpg?semt=ais_hybrid" alt="Variety of shoes"></a>
+            <h1>SHOES</h1>
+        </div>
+    </div>
+
+    <script>
+        function filterItems(category) {
+            let items = document.querySelectorAll('.men1');
+            
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.classList.remove('hidden');  // Show all items
+                } else if (item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');  // Show matching items
+                } else {
+                    item.classList.add('hidden');  // Hide non-matching items
+                }
+            });
+        }
+    </script>
+</body>
+</html>

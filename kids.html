@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kids Fashion</title>
+    <style>
+        *{
+          margin: 0;
+         padding: 0;
+         }
+         .k1{
+            align-items: center;
+            padding-top: 20px;
+         }
+        .k1 h1 {
+            text-align: center;
+            color: purple;
+            justify-content: center;
+            align-items: center;
+            font-size: 3em;
+        }
+        
+        .kid1 {
+            width: 360px;
+            height: 500px;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #0c0b0b;
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .kid1:hover {
+            transform: scale(1.05);
+        }
+        
+        .kid1 img {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+        }
+
+        .c3 {
+            margin-top: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Filter Button Styling */
+        .filter-button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: darkviolet;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .kid1 {
+                width: 90%; /* Make cards full width on smaller screens */
+            }
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none;
+        }
+        header{
+            background-color: black;
+            height: 150px;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+    <div class="k1">
+        <h1>KIDS STYLE</h1>
+    </div>
+    <br>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <button class="filter-button" onclick="filterItems('all')">All</button>
+        <button class="filter-button" onclick="filterItems('Boys')">Boys</button>
+        <button class="filter-button" onclick="filterItems('Girls')">Girls</button>
+        <button class="filter-button" onclick="filterItems('Toys')">Toys</button>
+    </div>
+</header>
+    <div class="c3">
+        <div class="kid1" data-category="Boys">
+            <a href="kids0.html">
+                <img src="https://img.freepik.com/free-photo/full-length-portrait-cute-little-kid-boy-stylish-jeans-clothes-smiling-standing-white-kids-fashion-concept_155003-20308.jpg?t=st=1732703143~exp=1732706743~hmac=9f9a5b34e339442d2f8c230778d10f13f56cb9daa213cde55d0e81d6bee116c8&w=740" alt="Boys Clothing"></a>
+            <h1>BOYS</h1>
+        </div>
+
+        <div class="kid1" data-category="Girls">
+            <a href="kids1.html">
+                <img src="https://img.freepik.com/free-photo/little-fashionista-with-shopping-bag-summer-hat-glasses-colored-pink-background-mom-s-shoes-concept-children-s-fashion_169016-4513.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Girls Clothing"></a>
+            <h1>GIRLS</h1>
+        </div>
+
+        <div class="kid1" data-category="Toys">
+            <a href="kids2.html">
+                <img src="https://img.freepik.com/free-photo/cute-plush-toy-books-arrangement_23-2150312277.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Kids Toys"></a>
+            <h1>TOYS</h1>
+        </div>
+    </div>
+
+    <script>
+        function filterItems(category) {
+            let items = document.querySelectorAll('.kid1');
+            
+            items.forEach(item => {
+                if (category === 'all') {
+                    item.classList.remove('hidden');  // Show all items
+                } else if (item.getAttribute('data-category') === category) {
+                    item.classList.remove('hidden');  // Show matching items
+                } else {
+                    item.classList.add('hidden');  // Hide non-matching items
+                }
+            });
+        }
+    </script>
+</body>
+</html>

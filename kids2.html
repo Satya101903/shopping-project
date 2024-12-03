@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Girls Fashion</title>
+    <style>
+        .k1 h1 {
+            text-align: center;
+            color: purple;
+        }
+
+       
+        .kid1 {
+            width: 360px;
+            height: 550px;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .kid1 {
+            width: 360px;
+            height: 550px;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .kid1:hover {
+            transform: scale(1.05);
+        }
+
+        .kid1 img {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .c6 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+ /* Cart Icon styling */
+        .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: purple;
+        }
+
+        .cart-count {
+            background-color: red;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 50%;
+            font-size: 1em;
+            position: relative;
+            top: -5px;
+            right: -5px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .filter-button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: darkviolet;
+        }
+
+        @media (max-width: 768px) {
+            .kid1 {
+                width: 90%;
+            }
+        }
+        .c6 button{
+            background-color: purple;
+            color: #ddd;
+            height: 25px;
+            border-radius: 10%;
+         }
+         .c6 button:hover{
+            background-color: rgb(255, 12, 255);
+            color: #ddd;
+         }
+    
+    </style>
+</head>
+<body>
+    <div style="background-color: black; height: 100px;padding-top: 20px ;">
+    <div class="k1">
+        <h1 style="font-size: 2.5em;">TOYS</h1>
+    </div>
+    </div>
+
+    <br>
+     <!-- Cart Icon with Count -->
+ <div class="cart-icon" onclick="window.location.href='cart.html'">
+    🛒 Cart
+    <span class="cart-count" id="cartCount">0</span>
+</div>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <label for="minPrice">Min Price:</label>
+        <input type="number" id="minPrice" placeholder="Minimum Price" />
+        <label for="maxPrice">Max Price:</label>
+        <input type="number" id="maxPrice" placeholder="Maximum Price" />
+        <button onclick="filterByPrice()">Filter by Price</button>
+    </div>
+
+    <div class="c6">
+        <div class="kid1" data-category="Educational Toys" data-price="1500">
+            <a href="#"><img src="https://www.elc.co.uk/medias/540640-Primary-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMzI5MzQ1fGltYWdlL3BuZ3xhVzFoWjJWekwyZ3lNaTlvWTJJdk9URTROemt4T1RNNU5qZzVOQzV3Ym1jfDJlNGEwNGYyZDU2YjA5ODc3ZTI1NmE2ODhlM2Q0NTA3NTEwZWRhNTIwYmJjMmM1YTQxYTEyM2YwMGMxMGM3ZTU" alt="Educational Toys"></a>
+            <h1>EDUCATIONAL TOYS</h1>
+            <p>Price: ₹1500</p>
+            <button onclick="addToCart('EDUCATIONAL TOYS', 1500, 'https://www.elc.co.uk/medias/540640-Primary-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wxMzI5MzQ1fGltYWdlL3BuZ3xhVzFoWjJWekwyZ3lNaTlvWTJJdk9URTROemt4T1RNNU5qZzVOQzV3Ym1jfDJlNGEwNGYyZDU2YjA5ODc3ZTI1NmE2ODhlM2Q0NTA3NTEwZWRhNTIwYmJjMmM1YTQxYTEyM2YwMGMxMGM3ZTU')">Add to Cart</button>
+        </div>
+    
+        <div class="kid1" data-category="Soft Toys" data-price="1200">
+            <a href="#"><img src="https://img.freepik.com/free-photo/fluffy-toy-texture-close-up_23-2149686881.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Soft Toys"></a>
+            <h1>SOFT TOYS</h1>
+            <p>Price: ₹1200</p>
+            <button onclick="addToCart('SOFT TOYS', 1200, 'https://img.freepik.com/free-photo/fluffy-toy-texture-close-up_23-2149686881.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="kid1" data-category="Puzzle Toys" data-price="500">
+            <a href="#"><img src="https://img.freepik.com/free-photo/3d-view-colorful-puzzle-pieces_52683-118087.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Puzzle Toys"></a>
+            <h1>PUZZLE TOYS</h1>
+            <p>Price: ₹500</p>
+            <button onclick="addToCart('PUZZLE TOYS', 500, 'https://img.freepik.com/free-photo/3d-view-colorful-puzzle-pieces_52683-118087.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="kid1" data-category="Electronic Toys" data-price="800">
+            <a href="#"><img src="https://img.freepik.com/free-psd/technology-icon-rendering_23-2150613837.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Electronic Toys"></a>
+            <h1>ELECTRONIC TOYS</h1>
+            <p>Price: ₹800</p>
+            <button onclick="addToCart('ELECTRONIC TOYS', 800, 'https://img.freepik.com/free-psd/technology-icon-rendering_23-2150613837.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div style="margin-top: 50px; margin-bottom: 50px;">
+            <div class="kid1" data-category="Musical Toys" data-price="650">
+                <a href="#"><img src="https://www.chotakingdom.co.in/wp-content/uploads/2021/12/03_w1hhrw.jpg" alt="Musical Toys"></a>
+                <h1>MUSICAL TOYS</h1>
+                <p>Price: ₹650</p>
+                <button onclick="addToCart('MUSICAL TOYS', 650, 'https://www.chotakingdom.co.in/wp-content/uploads/2021/12/03_w1hhrw.jpg')">Add to Cart</button>
+            </div>
+    
+            <div class="kid1" data-category="UNICORN TOYS" data-price="900">
+                <a href="#"><img src="https://img.freepik.com/free-photo/cute-plush-toy-books-arrangement_23-2150312268.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Unicorn Toys"></a>
+                <h1>UNICORN TOYS</h1>
+                <p>Price: ₹900</p>
+                <button onclick="addToCart('UNICORN TOYS', 900, 'https://img.freepik.com/free-photo/cute-plush-toy-books-arrangement_23-2150312268.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+            </div>
+    
+            <div class="kid1" data-category="TRACKTOR Toys" data-price="700">
+                <a href="#"><img src="https://img.freepik.com/free-psd/3d-rendering-farm-icon_23-2151014585.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Tracktor Toys"></a>
+                <h1>TRACKTOR TOYS</h1>
+                <p>Price: ₹700</p>
+                <button onclick="addToCart('TRACKTOR TOYS', 700, 'https://img.freepik.com/free-psd/3d-rendering-farm-icon_23-2151014585.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+            </div>
+    
+            <div class="kid1" data-category="CAR TOYS" data-price="900">
+                <a href="#"><img src="https://img.freepik.com/free-photo/vertical-selective-focus-shot-red-wagon-blue-car-placed-each-other-wooden-table_181624-32228.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid" alt="Car Toys"></a>
+                <h1>CAR TOYS</h1>
+                <p>Price: ₹900</p>
+                <button onclick="addToCart('CAR TOYS', 900, 'https://img.freepik.com/free-photo/vertical-selective-focus-shot-red-wagon-blue-car-placed-each-other-wooden-table_181624-32228.jpg?ga=GA1.1.516164247.1730120656&semt=ais_hybrid')">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    
+    </div>
+
+    <div id="noProductsMessage" style="text-align:center; color: red; font-size: 3.0em; display: none;">
+        No products found.
+    </div>
+
+    <script>
+       // Initialize cart
+       let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Update cart count
+function updateCartCount() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cartCount').textContent = cartCount;
+}
+
+// Add to cart function
+   function addToCart(name, price, imageUrl) {
+    const existingItemIndex = cart.findIndex(item => item.name === name);
+
+    if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity++;
+    } else {
+        cart.push({ name, price, imageUrl, quantity: 1 });
+    }
+
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count
+    updateCartCount();
+
+    // Redirect to cart page
+    window.location.href = 'cart.html';
+}
+
+   // Update the cart count on page load
+    updateCartCount();
+
+
+        function filterByPrice() {
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+            const items = document.querySelectorAll('.kid1');
+            let productsVisible = false;
+
+            items.forEach(item => {
+                const price = parseInt(item.getAttribute('data-price'));
+                if (price >= minPrice && price <= maxPrice) {
+                    item.classList.remove('hidden');
+                    productsVisible = true;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            const noProductsMessage = document.getElementById('noProductsMessage');
+            if (noProductsMessage) {
+                noProductsMessage.style.display = productsVisible ? 'none' : 'block';
+            }
+        }
+    </script>
+</body>
+</html>

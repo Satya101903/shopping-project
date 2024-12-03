@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ornaments</title>
+    <style>
+        .k1 h1 {
+            text-align: center;
+            color: purple;
+            font-size: 2.5em;
+        }
+         /* Cart Icon styling */
+         .cart-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 1.8em;
+            cursor: pointer;
+            color: purple;
+        }
+
+        .cart-count {
+            background-color: red;
+            color: white;
+            padding: 3px 8px;
+            border-radius: 50%;
+            font-size: 1em;
+            position: relative;
+            top: -5px;
+            right: -5px;
+        }
+        .women1 {
+            width: 360px;
+            height: 550px;
+            margin: 20px;
+            padding: 5px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            display: inline-block;
+            vertical-align: top;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .women1:hover {
+            transform: scale(1.05);
+        }
+        
+        .women1 img {
+            width: 100%;
+            height: 400px;
+            border-radius: 10px;
+        }
+
+        .a4 {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Hidden class for filtering */
+        .hidden {
+            display: none;
+        }
+
+        /* Filter Button Styling */
+        .filter-button {
+            margin: 5px;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            background-color: purple;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .filter-button:hover {
+            background-color: darkviolet;
+        }
+
+        /* Responsive styling */
+        @media (max-width: 768px) {
+            .women1 {
+                width: 90%; /* Make cards full width on smaller screens */
+            }
+        }
+        .a4 button{
+            background-color: purple;
+            color: #ddd;
+            height: 25px;
+            border-radius: 10%;
+         }
+         .a4 button:hover{
+         background-color: rgb(255, 12, 255);
+            color: #ddd;
+         }
+    </style>
+</head>
+<body>
+    <div style="background-color: black; height: 100px;padding-top: 20px ;">
+    <div class="k1">
+        <h1>ORNAMENTS</h1>
+    </div>
+</div>
+    <br>
+    <div class="cart-icon" onclick="window.location.href='cart.html'">
+        🛒 Cart
+        <span class="cart-count" id="cartCount">0</span>
+    </div>
+    <div style="text-align:center; margin-bottom: 20px;">
+        <label for="minPrice">Min Price:</label>
+        <input type="number" id="minPrice" placeholder="Minimum Price" />
+        <label for="maxPrice">Max Price:</label>
+        <input type="number" id="maxPrice" placeholder="Maximum Price" />
+        <button class="filter-button" onclick="filterByPrice()">Filter by Price</button>
+    </div>
+
+    <div class="a4">
+        <div class="women1" data-category="Ornaments" data-price="2155500">
+            <a href="#"><img src="https://img.freepik.com/free-photo/luxury-shine-diamonds-digital-art_23-2151695049.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Gold Necklace"></a>
+            <h1>GOLD NECKLACE</h1>
+            <p>Price: ₹21,55,500</p>
+            <button onclick="addToCart('Gold Necklace', 2155500, 'https://img.freepik.com/free-photo/luxury-shine-diamonds-digital-art_23-2151695049.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="70000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/beautiful-engagement-ring-with-diamonds_23-2149509241.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Diamond Ring"></a>
+            <h1>DIAMOND RING</h1>
+            <p>Price: ₹70,000</p>
+            <button onclick="addToCart('Diamond Ring', 70000, 'https://img.freepik.com/free-photo/beautiful-engagement-ring-with-diamonds_23-2149509241.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="30000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/still-life-aesthetic-earrings_23-2149649131.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Silver Earrings"></a>
+            <h1>SILVER EARRINGS</h1>
+            <p>Price: ₹30,000</p>
+            <button onclick="addToCart('Silver Earrings', 30000, 'https://img.freepik.com/free-photo/still-life-aesthetic-earrings_23-2149649131.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="38000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/vertical-shot-young-female-wearing-beautiful-silver-bracelet_181624-26319.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Platinum Bracelet"></a>
+            <h1>PLATINUM BRACELET</h1>
+            <p>Price: ₹38,000</p>
+            <button onclick="addToCart('Platinum Bracelet', 38000, 'https://img.freepik.com/free-photo/vertical-shot-young-female-wearing-beautiful-silver-bracelet_181624-26319.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="45000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/aesthetic-golden-earrings-high-angle_23-2149846562.jpg?semt=ais_hybrid" alt="Gold Earrings"></a>
+            <h1>GOLD EARRINGS</h1>
+            <p>Price: ₹45,000</p>
+            <button onclick="addToCart('Gold Earrings', 45000, 'https://img.freepik.com/free-photo/aesthetic-golden-earrings-high-angle_23-2149846562.jpg?semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="5300">
+            <a href="#"><img src="https://img.freepik.com/free-photo/abstract-gold-chain-jewellery-presentation_23-2149599075.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Pearl Necklace"></a>
+            <h1>PEARL NECKLACE</h1>
+            <p>Price: ₹5,300</p>
+            <button onclick="addToCart('Pearl Necklace', 5300, 'https://img.freepik.com/free-photo/abstract-gold-chain-jewellery-presentation_23-2149599075.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="55000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/young-indian-woman-wearing-sari_23-2149400884.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Gold Bangles"></a>
+            <h1>GOLD BANGLES</h1>
+            <p>Price: ₹55,000</p>
+            <button onclick="addToCart('Gold Bangles', 55000, 'https://img.freepik.com/free-photo/young-indian-woman-wearing-sari_23-2149400884.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    
+        <div class="women1" data-category="Ornaments" data-price="60000">
+            <a href="#"><img src="https://img.freepik.com/free-photo/gold-necklace-with-beaded-design-word-love-it_1340-42857.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid" alt="Gold Pendant"></a>
+            <h1>GOLD PENDANT</h1>
+            <p>Price: ₹60,000</p>
+            <button onclick="addToCart('Gold Pendant', 60000, 'https://img.freepik.com/free-photo/gold-necklace-with-beaded-design-word-love-it_1340-42857.jpg?ga=GA1.1.156782634.1732784764&semt=ais_hybrid')">Add to Cart</button>
+        </div>
+    </div>
+    
+
+    <div id="noProductsMessage" style="text-align:center; color: red; font-size: 3.0em; display: none;">
+        No products found.
+    </div>
+
+    <script>
+       // Initialize cart
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Update cart count
+function updateCartCount() {
+    const cartCount = cart.reduce((total, item) => total + item.quantity, 0);
+    document.getElementById('cartCount').textContent = cartCount;
+}
+
+// Add to cart function
+   function addToCart(name, price, imageUrl) {
+    const existingItemIndex = cart.findIndex(item => item.name === name);
+
+    if (existingItemIndex > -1) {
+        cart[existingItemIndex].quantity++;
+    } else {
+        cart.push({ name, price, imageUrl, quantity: 1 });
+    }
+
+    // Save to localStorage
+    localStorage.setItem('cart', JSON.stringify(cart));
+
+    // Update cart count
+    updateCartCount();
+
+    // Redirect to cart page
+    window.location.href = 'cart.html';
+}
+
+   // Update the cart count on page load
+    updateCartCount();
+
+        function filterByPrice() {
+            const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+            const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+            const items = document.querySelectorAll('.women1');
+            let productsVisible = false;
+
+            items.forEach(item => {
+                const price = parseInt(item.getAttribute('data-price'));
+                if (price >= minPrice && price <= maxPrice) {
+                    item.classList.remove('hidden');
+                    productsVisible = true;
+                } else {
+                    item.classList.add('hidden');
+                }
+            });
+
+            // Check if any product is visible after filtering
+            const noProductsMessage = document.getElementById('noProductsMessage');
+            if (noProductsMessage) {
+                noProductsMessage.style.display = productsVisible ? 'none' : 'block';
+            }
+        }
+    </script>
+</body>
+</html>
